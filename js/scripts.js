@@ -1,30 +1,13 @@
-  $(document).ready(function() {
-        $("button#green").click(function() {
-          $("body").addClass("green-background");
-        });
+$(document).ready(function() {
+       $("#blanks form").submit(function() {
+         var blanks = ["person1", "person2", "animal", "exclamation", "verb", "noun"];
 
-        $("button#yellow").click(function() {
-          $("body").addClass("yellow-background");
-        });
+         blanks.forEach(function(blank) {
+           var userInput = $("input." + blank).val();
+           $("." + blank).text(userInput).val();
+         });
 
-        $("button#red").click(function() {
-          $("body").addClass("red-background");
-        });
-      });
-      $(document).ready(function() {
-             $("button#green").click(function() {
-               $("body").removeClass();
-               $("body").addClass("green-background");
-             });
-
-             $("button#yellow").click(function() {
-               $("body").removeClass();
-               $("body").addClass("yellow-background");
-             });
-
-             $("button#red").click(function() {
-               $("body").removeClass();
-               $("body").addClass("red-background");
-             });
-           });
-         
+         $("#story").sho();
+       });
+     });
+   
